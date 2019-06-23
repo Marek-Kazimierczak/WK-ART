@@ -1,0 +1,101 @@
+/* appear - on page load */
+.fade-appear {
+  opacity: 0;
+  z-index: 1;
+}
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transition: opacity 500ms linear;
+}
+
+/* enter */
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms linear 500ms;
+}
+
+/* exit */
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transition: opacity 500ms linear;
+}
+.fade-exit-done {
+  opacity: 0;
+}
+
+/* slide enter */
+.slide-enter {
+  opacity: 0;
+  transform: scale(0.97) translateY(5px);
+  z-index: 1;
+}
+.slide-enter.slide-enter-active {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  transition: opacity 1000ms linear, transform 1000ms ease-in-out;
+}
+
+/* slide exit */
+.slide-exit {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+.slide-exit.slide-exit-active {
+  opacity: 0;
+  transform: scale(0.97) translateY(5px);
+  transition: opacity 500ms linear, transform 300ms ease-out;
+}
+.slide-exit-done {
+  opacity: 0;
+}
+
+.active div {
+  background-color: #fff;
+}
+
+.navlink {
+  padding: 0.5em;
+  text-decoration: none;
+  color: #fff;
+  position: relative;
+  &:hover .point {
+    background-color: #fff;
+    text-shadow: #fff 0 0 40px;
+  }
+  p {
+    position: absolute;
+    top: -1em;
+    left: -1em;
+    opacity: 0;
+    transition: 1s;
+  }
+  &:hover p {
+    opacity: 0.8;
+  }
+}
+
+.link-gallery {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.3;
+  position: absolute;
+  bottom: 10em;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6rem;
+  height: 3rem;
+  border: 3px solid #fff;
+  transition: 1s;
+  &:hover {
+    opacity: 1;
+  }
+}
