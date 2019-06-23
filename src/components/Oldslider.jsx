@@ -1,5 +1,4 @@
-import React, { Component, Fragment } from "react";
-import { HashRouter, Route, Link, Switch, NavLink } from "react-router-dom";
+import React, { Component } from "react";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 import data from "../assetsData";
@@ -16,7 +15,6 @@ class Slider extends Component {
   };
 
   nextProperty = () => {
-    console.log("next");
     let newPrevIndex = this.state.prevSlide.index;
     let newCurrIndex = this.state.currSlide.index;
     let newNextIndex = this.state.nextSlide.index;
@@ -39,15 +37,6 @@ class Slider extends Component {
       newNextIndex++;
     }
 
-    console.log(
-      "Prev",
-      newPrevIndex,
-      "Curr",
-      newCurrIndex,
-      "Next",
-      newNextIndex
-    );
-
     this.setState({
       prevSlide: data[this.props.type][newPrevIndex],
       currSlide: data[this.props.type][newCurrIndex],
@@ -56,8 +45,6 @@ class Slider extends Component {
   };
 
   prevProperty = () => {
-    console.log("prev");
-
     let newPrevIndex = this.state.prevSlide.index;
     let newCurrIndex = this.state.currSlide.index;
     let newNextIndex = this.state.nextSlide.index;
@@ -80,15 +67,6 @@ class Slider extends Component {
       newNextIndex--;
     }
 
-    console.log(
-      "Prev",
-      newPrevIndex,
-      "Curr",
-      newCurrIndex,
-      "Next",
-      newNextIndex
-    );
-
     this.setState({
       prevSlide: data[this.props.type][newPrevIndex],
       currSlide: data[this.props.type][newCurrIndex],
@@ -97,26 +75,16 @@ class Slider extends Component {
   };
 
   render() {
-    // console.log("Main", this.state.currSlide);
-
     const { currSlide, prevSlide, nextSlide } = this.state;
 
     return (
-      <Fragment>
+      <>
         <main>
           <button className="btn btn-top" onClick={this.scrollToNavigation}>
             <span className="fas fa-arrow-up fa-2x" />
           </button>
-          <div onClick={this.prevProperty} className="btn-slide btn-prev">
-            {/* <button className="btn" >
-              <span className="fas fa-arrow-left fa-2x" />
-            </button> */}
-          </div>
-          <div onClick={this.nextProperty} className="btn-slide btn-next">
-            {/* <button className="btn" >
-              <span className="fas fa-arrow-right fa-2x" />
-            </button> */}
-          </div>
+          <div onClick={this.prevProperty} className="btn-slide btn-prev" />
+          <div onClick={this.nextProperty} className="btn-slide btn-next" />
           <div className="gallery gallery-wrapper">
             <div className="prev-wrapper">
               <TransitionGroup className="image-prev">
@@ -170,7 +138,7 @@ class Slider extends Component {
             </div>
           </div>
         </main>
-      </Fragment>
+      </>
     );
   }
 }

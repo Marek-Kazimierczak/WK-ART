@@ -1,6 +1,5 @@
-import React, { Component, Fragment } from "react";
-import { HashRouter, Route, Link, Switch, NavLink } from "react-router-dom";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
+import React, { Component } from "react";
+import { CSSTransition } from "react-transition-group";
 
 import { particles } from "../scripts/particles";
 import { logoPixi } from "../scripts/logoPixi";
@@ -12,9 +11,8 @@ import TestSlider from "./TestSlider";
 
 class Section extends Component {
   render() {
-    // console.log(this.props.heading, ">>>>>");
     return (
-      <Fragment>
+      <>
         <Nav heading={this.props.heading} />
 
         <CSSTransition
@@ -25,7 +23,7 @@ class Section extends Component {
         >
           <TestSlider type={this.props.type} />
         </CSSTransition>
-      </Fragment>
+      </>
     );
   }
 

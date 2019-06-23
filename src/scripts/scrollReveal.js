@@ -41,8 +41,7 @@ const scroll = () => {
     easing: "ease-in"
   });
 
-  console.log(ScrollReveal);
+  console.log("ScrollReveal loaded", ScrollReveal);
 };
-// });
 
 export { scroll };
