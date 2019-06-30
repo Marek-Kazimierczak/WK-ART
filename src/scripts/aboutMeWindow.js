@@ -1,6 +1,6 @@
 import { TimelineMax, Power3 } from "gsap";
 
-const contactWindow = () => {
+const aboutMeWindow = () => {
   const open = document.querySelector(".open-js");
   const exit = document.querySelector(".exit-js");
   const window = document.querySelector(".window-js");
@@ -25,4 +25,4 @@ const contactWindow = () => {
   });
 };
 
-export default contactWindow;
+export default aboutMeWindow;

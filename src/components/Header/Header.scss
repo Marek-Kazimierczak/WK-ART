@@ -1,0 +1,34 @@
+@import "../../config/partials/variables";
+
+.nav-contact {
+  position: absolute;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  width: 90%;
+  padding: $main-padding;
+  p {
+    padding-right: $main-padding;
+  }
+  a {
+    text-decoration: none;
+    color: #fff;
+    padding-right: $main-padding;
+    @media screen and (min-width: map-get($breakpoints, sm)) {
+      padding-right: 0;
+    }
+  }
+  .contact-link,
+  .fa-behance {
+    text-shadow: none;
+    transition-duration: 0.5s;
+    transition-property: text-shadow;
+    cursor: pointer;
+    .contact-link:hover {
+      text-shadow: #fff 0 0 50px;
+    }
+    .fa-behance:hover {
+      text-shadow: #fff 0 0 50px;
+    }
+  }
+}

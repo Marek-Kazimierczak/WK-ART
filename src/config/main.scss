@@ -1,9 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Poppins);
+@import "partials/variables";
 @import "partials/reset";
 @import "partials/transitionReact";
-@import "partials/logoPixi";
 @import "partials/translate3d";
-@import "partials/contactWindow";
 
 /* FONTS */
 
@@ -15,24 +14,31 @@
   font-style: normal;
 }
 
-/* PARTICLES.JS */
+/* CANVAS */
 
-.background {
+.background-particles {
   position: absolute;
-  display: block;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: -1000;
-  background-color: black;
-  height: 200% !important;
-  width: 200% !important;
+  background-color: $color-background;
+  height: 120%;
+  width: 120%;
 }
 
+.pixi-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+/* GENERAL STYLES */
+
 body {
+  color: $text-primary;
+  background-color: $color-background;
   overflow-x: hidden;
-  // overflow: hidden;
   font-family: "Poppins", sans-serif;
 }
 
@@ -42,266 +48,4 @@ body {
 
 .body-overflow-contact {
   overflow: hidden;
-}
-
-nav {
-  // display: none; // TURN OFF nav
-  margin: 0 auto;
-  color: white;
-  height: 100vh;
-  position: relative;
-
-  .nav-contact {
-    display: flex;
-    justify-content: flex-end;
-    padding: 2em;
-    p {
-      padding-right: 2em;
-    }
-    a {
-      text-decoration: none;
-      color: #fff;
-    }
-    .contact-link,
-    .fa-behance {
-      text-shadow: none;
-      transition-duration: 0.5s;
-      transition-property: text-shadow;
-      cursor: pointer;
-      .contact-link:hover {
-        text-shadow: #fff 0 0 50px;
-      }
-      .fa-behance:hover {
-        text-shadow: #fff 0 0 50px;
-      }
-    }
-  }
-  .nav-frame {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80%;
-    // translate3d
-
-    .frame {
-      height: 35%;
-      width: 700px;
-      border: 0.7em solid #333;
-      position: relative;
-      top: -3em;
-      z-index: -3;
-      // transform-style: preserve-3d;
-    }
-    h1 {
-      font-family: "bebas_neuebold";
-      text-transform: uppercase;
-      font-size: 7em;
-      letter-spacing: 0.2em;
-      font-weight: bold;
-      line-height: 0.9em;
-      position: absolute;
-      right: 1em;
-      top: -0.2em;
-      z-index: 10;
-      // translate3d
-      // transform: translateZ(200px) scale(1);
-      // -webkit-transform: translateZ(80px) scale(1);
-      // transform-style: preserve-3d;
-      // transition
-      text-shadow: none;
-      transition-duration: 2s;
-      transition-property: text-shadow;
-      &:hover {
-        text-shadow: #fff 0 0 50px;
-      }
-    }
-
-    .bubble {
-      height: 80%;
-      width: 80%;
-      position: absolute;
-      left: 25%;
-      top: 10%;
-      z-index: 1;
-      // background-image: url(../images/bubble-1.png);
-      // background-repeat: no-repeat;
-      // background-size: contain;
-    }
-  }
-}
-
-.nav-menu {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  top: calc(100vh - 4em);
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 100;
-
-  .point {
-    height: 0.7em;
-    width: 0.7em;
-    margin: 1em;
-    border-radius: 50%;
-    border: 1px #fff solid;
-    // transition
-    text-shadow: none;
-    transition-duration: 0.5s;
-    transition-property: text-shadow, background-color;
-  }
-}
-
-main {
-  // border: 1px red solid;
-  // padding: 5em;
-  background: black;
-  position: relative;
-  // z-index: -2;
-
-  .btn-slide {
-    // border: 1px red solid;
-    position: absolute;
-    // float: left;
-    top: 0;
-    bottom: 0;
-
-    // height: 100vh;
-    width: 20%;
-    z-index: 200;
-    border: none;
-    outline-style: none;
-    // width: 50px;
-    // height: 50px;
-    // border-radius: 50%;
-    cursor: pointer;
-    background: transparent;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    span {
-      display: block;
-      height: 5rem;
-      width: 5rem;
-      color: rgba(255, 255, 255, 0.4);
-      transition: color 1000ms;
-    }
-    &:hover span {
-      color: rgba(255, 255, 255, 0.1);
-    }
-  }
-
-  .btn {
-    position: absolute;
-    z-index: 5;
-    outline-style: none;
-    cursor: pointer;
-    height: 5rem;
-    width: 5rem;
-    border-radius: 50%;
-    border: 3px solid;
-    border-color: rgba(255, 255, 255, 0.4);
-    background: transparent;
-    color: rgba(255, 255, 255, 0.4);
-    transition: color 1000ms, border-color 1000ms;
-
-    &:hover span {
-      color: rgba(255, 255, 255, 0.1);
-      border-color: rgba(255, 255, 255, 0.1);
-    }
-  }
-
-  .btn-top {
-    transform: translateX(-50%);
-    top: 2rem;
-    left: 50%;
-  }
-  .btn-prev {
-    transform: translate(-50% 50%);
-    // border: 3px red solid;
-    left: 0;
-
-    span {
-      position: relative;
-      top: 1.2rem;
-      right: 0.6rem;
-    }
-  }
-
-  .btn-next {
-    transform: translate(-50% 50%);
-    // border: 3px blue solid;
-    right: 0;
-    span {
-      position: relative;
-      top: 1.2rem;
-      right: 0.6rem;
-    }
-  }
-
-  .gallery-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    // height: 100vh;
-  }
-
-  .image-active {
-    // border: 1px green solid;
-    height: 600px;
-    width: 100%;
-    z-index: 2;
-    box-shadow: 0 0 15px 10px black;
-    background-color: black;
-    // background-image: url(../images/painting-10.jpg);
-    background-position: center;
-    background-size: 100% center;
-    background-repeat: no-repeat;
-
-    // ====== for New Horizontal Gallery
-    display: flex;
-    justify-content: center;
-    padding: 100px;
-
-    img {
-      max-width: 100%;
-      max-height: 100%;
-    }
-  }
-
-  .prev-wrapper,
-  .next-wrapper {
-    width: 25%;
-    height: 100%;
-  }
-  .image-prev {
-    // border: 1px yellow solid;
-    right: -1rem;
-    // background-image: url(../images/p-5.jpg);
-    background-position: right center;
-    background-repeat: no-repeat;
-  }
-  .image-next {
-    // border: 1px dodgerblue solid;
-    left: -1rem;
-    // background-image: url(../images/p-8.jpg);
-    background-position: left center;
-    background-repeat: no-repeat;
-  }
-  .image-prev,
-  .image-next {
-    height: 100%;
-    position: relative;
-    background-size: auto 100%;
-
-    filter: grayscale(100%);
-    filter: blur(4px);
-  }
-}
-
-// React
-
-.react-heading {
-  color: white;
-  font-size: 10rem;
 }

@@ -1,13 +1,13 @@
 import React, { Component } from "react";
+import SwipeableRoutes from "react-swipeable-routes";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 import { particles } from "../scripts/particles";
-// import { logoPixi } from "../scripts/logoPixi";
-// import { scroll } from "../scripts/scrollReveal";
-// import { translate3DTimeOutset } from "../scripts/transform3dMenu";
-import NavBar from "./navBar";
-import Section from "./section";
+import Header from "./Header";
+import AboutMe from "./AboutMe";
+import NavBar from "./NabBar";
+import Section from "./Section";
 
 class Painting extends Component {
   render() {
@@ -31,7 +31,7 @@ class MainWrapper extends Component {
     particles();
   }
   render() {
-    return <div>{this.props.children}</div>;
+    return <>{this.props.children}</>;
   }
 }
 
@@ -40,7 +40,9 @@ class App extends Component {
     return (
       <Router>
         <MainWrapper>
-          <canvas className="background" />
+          <canvas className="background-particles" />
+          <Header />
+          <AboutMe />
           <NavBar />
           <Route
             render={({ location }) => (
@@ -51,9 +53,11 @@ class App extends Component {
                   timeout={1000}
                 >
                   <Switch>
-                    <Route exact path="/" component={Painting} />
-                    <Route path="/drawing" component={Drawing} />
-                    <Route path="/installation" component={Installation} />
+                    <SwipeableRoutes>
+                      <Route exact path="/" component={Painting} />
+                      <Route path="/drawing" component={Drawing} />
+                      <Route path="/installation" component={Installation} />
+                    </SwipeableRoutes>
                   </Switch>
                 </CSSTransition>
               </TransitionGroup>

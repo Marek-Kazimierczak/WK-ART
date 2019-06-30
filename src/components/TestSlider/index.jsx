@@ -1,6 +1,6 @@
 import React from "react";
 
-import data from "../scripts/assetsData";
+import data from "../../scripts/assetsData";
 
 const testSlider = props => {
   const { type } = props;

@@ -6,7 +6,7 @@ const logoPixi = () => {
   const shape = "./assets/ripple.jpg";
 
   const app = new PIXI.Application({
-    view: document.querySelector("#canvas"),
+    view: document.querySelector("#pixi-canvas"),
     width: 1200,
     height: 1000,
     transparent: true
