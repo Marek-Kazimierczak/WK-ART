@@ -9,4 +9,4 @@ const particles = () => {
   console.log("Particles loaded");
 };
 
-export { particles };
+export default particles;

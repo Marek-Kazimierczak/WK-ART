@@ -1,4 +1,4 @@
-@import "../../config/partials/variables";
+@import "../../config/variables";
 
 .nav-contact {
   position: absolute;
@@ -7,6 +7,7 @@
   justify-content: flex-end;
   width: 90%;
   padding: $main-padding;
+  z-index: 5;
   p {
     padding-right: $main-padding;
   }

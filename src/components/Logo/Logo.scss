@@ -1,10 +1,11 @@
-@import "../../config/partials/variables";
+@import "../../config/variables";
 
 .nav-container {
   height: 100vh;
 
   .nav-frame-wrapper {
-    height: 100%;
+    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,7 +19,7 @@
     .frame {
       height: 100px;
       width: 250px;
-      border: 10px solid #222;
+      border: 10px solid #333;
       position: relative;
       @media screen and (min-width: map-get($breakpoints, sm)) {
         width: 300px;
@@ -39,7 +40,7 @@
         position: absolute;
         right: 20px;
         top: -20px;
-        z-index: 10;
+        z-index: 2;
         transform: translateZ(200px) scale(1);
         -webkit-transform: translateZ(80px) scale(1);
         transform-style: preserve-3d;

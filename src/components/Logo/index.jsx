@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import "./Nav.scss";
+import "./Logo.scss";
 
 class Nav extends Component {
   scrollToGallery = () => {
@@ -34,6 +34,7 @@ class Nav extends Component {
               <span className="heading-3-js">{heading[2]}</span>
             </h1>
           </div>
+          {/* </div> */}
         </div>
       </nav>
     );
