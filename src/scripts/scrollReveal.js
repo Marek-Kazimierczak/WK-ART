@@ -1,8 +1,9 @@
 import ScrollReveal from "scrollreveal";
 
 const sr = ScrollReveal();
+
 const scroll = () => {
-  sr.reveal(".frame", {
+  sr.reveal(".nav-container", {
     duration: 2000,
     distance: "500px",
     origin: "bottom"
@@ -44,4 +45,4 @@ const scroll = () => {
   console.log("ScrollReveal loaded", ScrollReveal);
 };
 
-export { scroll };
+export default scroll;

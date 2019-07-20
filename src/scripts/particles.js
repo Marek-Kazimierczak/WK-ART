@@ -2,11 +2,11 @@ import Particles from "particlesjs";
 
 const particles = () => {
   Particles.init({
-    selector: ".background",
+    selector: ".background-particles",
     color: "#666666"
   });
 
   console.log("Particles loaded");
 };
 
-export { particles };
+export default particles;

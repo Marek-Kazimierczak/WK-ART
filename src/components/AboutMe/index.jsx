@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import contactWindow from "../scripts/contactWindow";
+import aboutMeWindow from "../../scripts/aboutMeWindow";
 
-class Contact extends Component {
+import "./AboutMe.scss";
+
+class AboutMe extends Component {
   render() {
     return (
       <div className="contact-window window-js">
@@ -33,8 +35,8 @@ class Contact extends Component {
   }
 
   componentDidMount() {
-    contactWindow();
+    aboutMeWindow();
   }
 }
 
-export default Contact;
+export default AboutMe;

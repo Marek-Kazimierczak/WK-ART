@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
-import data from "../assetsData";
+import data from "../../scripts/assetsData";
 
 class Slider extends Component {
   state = {

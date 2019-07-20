@@ -1,65 +1,85 @@
 import React, { Component } from "react";
+import SwipeableRoutes from "react-swipeable-routes";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
+import particles from "../scripts/particles";
+import scroll from "../scripts/scrollReveal";
+import { translate3DTimeOutset } from "../scripts/transform3dMenu";
+import basicScrollTop from "../scripts/scrollTopButton";
 
-import { particles } from "../scripts/particles";
-// import { logoPixi } from "../scripts/logoPixi";
-// import { scroll } from "../scripts/scrollReveal";
-// import { translate3DTimeOutset } from "../scripts/transform3dMenu";
-import NavBar from "./navBar";
-import Section from "./section";
+import Header from "./Header";
+import AboutMe from "./AboutMe";
+import NavBar from "./NabBar";
+import Section from "./Section";
 
-class Painting extends Component {
-  render() {
-    return <Section heading={["pa", "int", "ing"]} type="painting" />;
-  }
-}
-class Drawing extends Component {
-  render() {
-    return <Section heading={["dr", "aw", "ing"]} type="drawing" />;
-  }
-}
-class Installation extends Component {
-  render() {
-    return <Section heading={["insta", "llat", "ion"]} type="installation" />;
-  }
-}
+import "./App.scss";
 
-class MainWrapper extends Component {
+class App extends Component {
   componentDidMount() {
     document.body.classList.add("body-overflow");
     particles();
+    scroll();
+    translate3DTimeOutset();
+    basicScrollTop();
   }
-  render() {
-    return <div>{this.props.children}</div>;
-  }
-}
 
-class App extends Component {
   render() {
     return (
       <Router>
-        <MainWrapper>
-          <canvas className="background" />
-          <NavBar />
-          <Route
-            render={({ location }) => (
-              <TransitionGroup>
-                <CSSTransition
-                  key={location.key}
-                  classNames="fade"
-                  timeout={1000}
-                >
-                  <Switch>
-                    <Route exact path="/" component={Painting} />
-                    <Route path="/drawing" component={Drawing} />
-                    <Route path="/installation" component={Installation} />
-                  </Switch>
-                </CSSTransition>
-              </TransitionGroup>
-            )}
-          />
-        </MainWrapper>
+        <canvas className="background-particles" />
+        <Header />
+        <AboutMe />
+        <NavBar />
+        <button id="goTop">
+          <i class="material-icons">keyboard_arrow_up</i>
+        </button>
+        <Route
+          render={({ location }) => (
+            <TransitionGroup>
+              <CSSTransition
+                key={location.key}
+                classNames="fade"
+                timeout={1000}
+              >
+                <Switch>
+                  <SwipeableRoutes>
+                    <Route
+                      exact
+                      path="/"
+                      render={routeProps => (
+                        <Section
+                          {...routeProps}
+                          type="painting"
+                          heading={["pa", "int", "ing"]}
+                        />
+                      )}
+                    />
+                    <Route
+                      path="/drawing"
+                      render={routeProps => (
+                        <Section
+                          {...routeProps}
+                          type="drawing"
+                          heading={["dr", "aw", "ing"]}
+                        />
+                      )}
+                    />
+                    <Route
+                      path="/installation"
+                      render={routeProps => (
+                        <Section
+                          {...routeProps}
+                          type="installation"
+                          heading={["insta", "llat", "ion"]}
+                        />
+                      )}
+                    />
+                  </SwipeableRoutes>
+                </Switch>
+              </CSSTransition>
+            </TransitionGroup>
+          )}
+        />
       </Router>
     );
   }

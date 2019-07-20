@@ -6,7 +6,7 @@ const logoPixi = () => {
   const shape = "./assets/ripple.jpg";
 
   const app = new PIXI.Application({
-    view: document.querySelector("#canvas"),
+    view: document.querySelector("#pixi-canvas"),
     width: 1200,
     height: 1000,
     transparent: true
@@ -28,7 +28,7 @@ const logoPixi = () => {
   app.stage.filters = [filter];
   app.stage.addChild(logo, ripple);
 
-  const tl = new TimelineMax({ repeat: -1, repeatDelay: -2 }).to(
+  new TimelineMax({ repeat: -1, repeatDelay: -2 }).to(
     ripple.scale,
     10,
     { x: 20, y: 20, ease: Sine.easeOut },
@@ -38,4 +38,4 @@ const logoPixi = () => {
   console.log("logoPixi loaded");
 };
 
-export { logoPixi };
+export default logoPixi;
