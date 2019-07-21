@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { CSSTransition } from "react-transition-group";
 import logoPixi from "../../scripts/logoPixi";
+import { translate3DTimeOutSwitch } from "../../scripts/transform3dMenu";
 import Logo from "../Logo";
 import TestSlider from "../TestSlider";
 // import OldSlider from "./OldSlider";
@@ -8,6 +9,7 @@ import TestSlider from "../TestSlider";
 class Section extends Component {
   componentDidMount() {
     logoPixi();
+    translate3DTimeOutSwitch();
   }
 
   render() {

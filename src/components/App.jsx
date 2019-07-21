@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import particles from "../scripts/particles";
 import scroll from "../scripts/scrollReveal";
-import { translate3DTimeOutset } from "../scripts/transform3dMenu";
 import basicScrollTop from "../scripts/scrollTopButton";
 
 import Header from "./Header";
@@ -19,7 +18,6 @@ class App extends Component {
     document.body.classList.add("body-overflow");
     particles();
     scroll();
-    translate3DTimeOutset();
     basicScrollTop();
   }
 

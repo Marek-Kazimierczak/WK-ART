@@ -4,45 +4,68 @@
   display: flex;
   justify-content: center;
   position: absolute;
-  top: calc(100% - 50px);
-  left: 50%;
-  transform: translateX(-50%);
+  top: calc(100% - 70px);
+  margin: 0 auto;
+  width: 100vw;
   z-index: 100;
+  @media screen and (min-width: map-get($breakpoints, sm)) {
+    right: $main-padding * 2;
+    transform: translateX(0);
+    width: auto;
+  }
 
-  .point {
-    height: 0.7em;
-    width: 0.7em;
-    margin: 1em;
-    border-radius: 50%;
-    border: 1px #fff solid;
-    // transition
+  // .point {
+  //   height: 0.7em;
+  //   width: 0.7em;
+  //   margin: 1em;
+  //   border-radius: 50%;
+  //   border: 1px #fff solid;
+  //   // transition
+  //   text-shadow: none;
+  //   transition-duration: 0.5s;
+  //   transition-property: text-shadow, background-color;
+  // }
+
+  .navlink {
+    color: white;
+    text-transform: capitalize;
+    padding: 1em;
+    text-decoration: none;
     text-shadow: none;
     transition-duration: 0.5s;
-    transition-property: text-shadow, background-color;
+    transition-property: text-shadow;
+    &:hover {
+      text-shadow: #fff 0 0 50px;
+    }
+    &:last-child {
+      @media screen and (min-width: map-get($breakpoints, sm)) {
+        padding-right: 0;
+      }
+    }
   }
 }
 
-.active div {
-  background-color: #fff;
+.active p {
+  text-shadow: #fff 0 0 100px;
 }
 
-.navlink {
-  padding: 0.5em;
-  text-decoration: none;
-  color: #fff;
-  position: relative;
-  &:hover .point {
-    background-color: #fff;
-    text-shadow: #fff 0 0 40px;
-  }
-  p {
-    position: absolute;
-    top: -1em;
-    left: -1em;
-    opacity: 0;
-    transition: 1s;
-  }
-  &:hover p {
-    opacity: 0.8;
-  }
-}
+// .navlink {
+//   padding: 0.5em;
+//   text-decoration: none;
+//   color: #fff;
+//   position: relative;
+//   &:hover .point {
+//     background-color: #fff;
+//     text-shadow: #fff 0 0 40px;
+//   }
+//   p {
+//     position: absolute;
+//     top: -1em;
+//     left: -1em;
+//     opacity: 0;
+//     transition: 1s;
+//   }
+//   &:hover p {
+//     opacity: 0.8;
+//   }
+// }

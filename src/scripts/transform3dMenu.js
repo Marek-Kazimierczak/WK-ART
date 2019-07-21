@@ -41,8 +41,14 @@ const translate3d = () => {
   });
 };
 
-const translate3DTimeOutset = () => {
+export const translate3DTimeOutStart = () => {
   setTimeout(translate3d, 5000);
+
+  console.log("transform 3D Menu loaded");
 };
 
-export { translate3DTimeOutset };
+export const translate3DTimeOutSwitch = () => {
+  setTimeout(translate3d, 2000);
+
+  console.log("transform 3D Menu loaded");
+};

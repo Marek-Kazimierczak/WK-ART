@@ -25,9 +25,9 @@
         width: 300px;
       }
       @media screen and (min-width: map-get($breakpoints, md)) {
-        width: 500px;
+        width: 600px;
         height: 200px;
-        border: 15px solid #151515;
+        border: 10px solid #222;
       }
 
       .nav-heading {
@@ -53,12 +53,16 @@
         }
 
         @media screen and (min-width: map-get($breakpoints, md)) {
-          font-size: 7rem;
-          top: -50px;
+          font-size: 6rem;
+          top: -30px;
+          right: 150px;
         }
       }
       .nav-heading-big {
         right: -20px;
+        @media screen and (min-width: map-get($breakpoints, md)) {
+          right: 50px;
+        }
       }
 
       .bubble {
@@ -78,9 +82,9 @@
         }
 
         @media screen and (min-width: map-get($breakpoints, md)) {
-          // top: -80px;
+          top: -90px;
           left: -40px;
-          height: 400px;
+          height: 450px;
           width: 450px;
         }
       }

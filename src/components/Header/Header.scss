@@ -4,13 +4,37 @@
   position: absolute;
   margin: 0 auto;
   display: flex;
-  justify-content: flex-end;
-  width: 90%;
-  padding: $main-padding;
+  justify-content: space-between;
+  width: 100%;
+  padding: $main-padding 0;
   z-index: 5;
+
+  .header-logo {
+    width: 20px;
+    height: 20px;
+    padding-left: $main-padding;
+    @media screen and (min-width: map-get($breakpoints, sm)) {
+      padding-left: $main-padding * 2;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .contact-links {
+    padding-right: $mobile-padding;
+    display: flex;
+    justify-content: space-between;
+    @media screen and (min-width: map-get($breakpoints, sm)) {
+      padding-right: $main-padding * 2;
+    }
+  }
+
   p {
     padding-right: $main-padding;
   }
+
   a {
     text-decoration: none;
     color: #fff;
