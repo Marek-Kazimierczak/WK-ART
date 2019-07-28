@@ -16,7 +16,11 @@ const Header = props => {
           Contact
         </p>
 
-        <a href="https://www.behance.net/wkazimierc8a74" target="_blank">
+        <a
+          href="https://www.behance.net/wkazimierc8a74"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <span className="fab fa-behance" />
         </a>
       </div>

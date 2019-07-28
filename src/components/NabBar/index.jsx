@@ -12,7 +12,7 @@ const NavBar = () => {
           {/* <div className="point" /> */}
           <p className="contact-link">painting</p>
         </NavLink>
-        <NavLink className="navlink" clactiveClassName="active" to="/drawing">
+        <NavLink className="navlink" activeClassName="active" to="/drawing">
           {/* <p className="nav-txt nav-txt-installation">drawing</p>
           <div className="point" /> */}
           <p className="contact-link">drawing</p>

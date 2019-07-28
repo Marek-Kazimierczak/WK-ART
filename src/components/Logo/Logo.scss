@@ -75,10 +75,10 @@
         transform-style: preserve-3d;
 
         @media screen and (min-width: map-get($breakpoints, sm)) {
-          top: -80px;
+          top: -60px;
           left: -20px;
-          height: 300px;
-          width: 350px;
+          height: 250px;
+          width: 300px;
         }
 
         @media screen and (min-width: map-get($breakpoints, md)) {

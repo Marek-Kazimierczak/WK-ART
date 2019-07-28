@@ -34,13 +34,32 @@ const scroll = () => {
     origin: "left"
   });
 
-  sr.reveal(".js-image", {
-    duration: 1000,
-    // delay: 1000,
-    // distance: "400px",
-    // origin: "left",
-    easing: "ease-in"
-  });
+  // const PicturesAnimation = () =>
+  //   new Array(20).fill(0).map((image, index) =>
+  //     // even images
+  //     {
+  //       if (index % 2 === 0 && index) {
+  //         return sr.reveal(`.js-image-${index}`, {
+  //           duration: 1000,
+  //           // delay: 1000,
+  //           distance: "400px",
+  //           origin: "left",
+  //           easing: "ease-in"
+  //         });
+  //       } else {
+  //         // odd images
+  //         return sr.reveal(`.js-image-${index}`, {
+  //           duration: 1000,
+  //           // delay: 1000,
+  //           distance: "400px",
+  //           origin: "right",
+  //           easing: "ease-in"
+  //         });
+  //       }
+  //     }
+  //   );
+
+  // PicturesAnimation();
 
   console.log("ScrollReveal loaded", ScrollReveal);
 };

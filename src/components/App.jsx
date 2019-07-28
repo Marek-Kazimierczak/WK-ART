@@ -5,6 +5,7 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 import particles from "../scripts/particles";
 import scroll from "../scripts/scrollReveal";
 import basicScrollTop from "../scripts/scrollTopButton";
+import { scrollMagic } from "../scripts/galleryScrollMagic";
 
 import Header from "./Header";
 import AboutMe from "./AboutMe";
@@ -19,6 +20,7 @@ class App extends Component {
     particles();
     scroll();
     basicScrollTop();
+    scrollMagic();
   }
 
   render() {
@@ -29,7 +31,7 @@ class App extends Component {
         <AboutMe />
         <NavBar />
         <button id="goTop">
-          <i class="material-icons">keyboard_arrow_up</i>
+          <i className="material-icons">keyboard_arrow_up</i>
         </button>
         <Route
           render={({ location }) => (
