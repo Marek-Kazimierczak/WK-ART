@@ -1,0 +1,143 @@
+@import "../../config/variables";
+
+.nav-container {
+  height: 100vh;
+
+  .scroll-to-gallery-overlay {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 20;
+    @media screen and (min-width: map-get($breakpoints, md)) {
+      display: none;
+    }
+  }
+
+  .nav-frame-wrapper {
+    height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media screen and (min-width: map-get($breakpoints, sm)) {
+      padding-top: 0;
+    }
+    @media screen and (min-width: map-get($breakpoints, md)) {
+      align-items: center;
+    }
+
+    .frame {
+      height: 100px;
+      width: 250px;
+      border: 10px solid #333;
+      position: relative;
+      @media screen and (min-width: map-get($breakpoints, sm)) {
+        width: 300px;
+      }
+      @media screen and (min-width: map-get($breakpoints, md)) {
+        width: 600px;
+        height: 200px;
+        border: 10px solid #222;
+      }
+
+      .nav-heading {
+        font-family: "bebas_neuebold";
+        text-transform: uppercase;
+        font-size: 3rem;
+        letter-spacing: 0.2em;
+        font-weight: bold;
+        line-height: 0.9em;
+        position: absolute;
+        right: 20px;
+        top: -20px;
+        z-index: 2;
+        transform: translateZ(200px) scale(1);
+        -webkit-transform: translateZ(80px) scale(1);
+        transform-style: preserve-3d;
+        text-shadow: none;
+        transition-duration: 2s;
+        transition-property: text-shadow;
+
+        &:hover {
+          text-shadow: #fff 0 0 50px;
+        }
+
+        @media screen and (min-width: map-get($breakpoints, md)) {
+          font-size: 6rem;
+          top: -30px;
+          right: 150px;
+        }
+      }
+      .nav-heading-big {
+        right: -20px;
+        @media screen and (min-width: map-get($breakpoints, md)) {
+          right: 50px;
+        }
+      }
+
+      .nav-heading-whale {
+        position: relative;
+        left: -12px;
+        top: -3px;
+
+        @media screen and (max-width: map-get($breakpoints, md)) and (orientation: landscape) {
+          left: 72px;
+          top: -10px;
+        }
+
+        @media screen and (min-width: map-get($breakpoints, md)) {
+          white-space: nowrap;
+          position: relative;
+          left: 180px;
+          top: -30px;
+
+          letter-spacing: 0.1em;
+        }
+      }
+
+      .bubble {
+        position: absolute;
+        left: -50px;
+        top: -50px;
+        z-index: 1;
+        transform: translateZ(200px) scale(1);
+        -webkit-transform: translateZ(50px) scale(1);
+        transform-style: preserve-3d;
+
+        @media screen and (min-width: map-get($breakpoints, sm)) {
+          top: -60px;
+          left: -20px;
+          height: 250px;
+          width: 300px;
+        }
+
+        @media screen and (min-width: map-get($breakpoints, sm)) {
+          top: -60px;
+          left: -20px;
+          height: 250px;
+          width: 300px;
+        }
+
+        @media screen and (min-width: map-get($breakpoints, md)) {
+          top: -90px;
+          left: -40px;
+          height: 450px;
+          width: 450px;
+        }
+
+        &.bubble-whale {
+          @media screen and (min-width: map-get($breakpoints, md)) {
+            top: -125px;
+            left: -125px;
+            height: 500px;
+            width: 500px;
+          }
+          @media screen and (max-width: map-get($breakpoints, md)) and (orientation: landscape) {
+            left: -112px;
+            top: -58px;
+          }
+        }
+      }
+    }
+  }
+}

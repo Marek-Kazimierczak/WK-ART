@@ -1,0 +1,92 @@
+@import "../../config/variables";
+
+.contact-wrapper {
+  opacity: 1;
+  height: 100%;
+  width: 100%;
+  padding: $mobile-padding;
+  padding-top: 150px;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+
+  @media screen and (min-width: map-get($breakpoints, sm)) {
+    padding: 4rem $main-padding;
+  }
+
+  .contact-info {
+    width: 80%;
+    padding: $main-padding * 3 $mobile-padding;
+    padding-top: $main-padding * 3;
+    font-weight: 400;
+    @media screen and (min-width: map-get($breakpoints, sm)) {
+      width: 35%;
+    }
+
+    @media screen and (max-width: map-get($breakpoints, md)) and (orientation: landscape) {
+      z-index: 50;
+    }
+
+    .about-name {
+      font-family: "bebas_neuebold";
+      font-size: 3rem;
+      margin: $main-padding / 2 0;
+    }
+
+    .about-special-txt {
+      color: $text-special;
+      font-weight: bold;
+    }
+
+    .about-divider {
+      height: 3px;
+      width: 50px;
+
+      background: white;
+    }
+
+    .about-description {
+      margin: $main-padding 0;
+      line-height: 1.8rem;
+      font-weight: lighter;
+    }
+
+    .about-contact-header {
+      padding: $main-padding/2 0;
+      display: inline-block;
+    }
+  }
+
+  .about-scene-wrapper {
+    width: 100vw;
+
+    @media screen and (min-width: map-get($breakpoints, md)) {
+      width: 60%;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    @media screen and (max-width: map-get($breakpoints, md)) and (orientation: landscape) {
+      position: fixed;
+      width: 60%;
+      right: 0;
+      top: -20px;
+      height: 100%;
+    }
+
+    #about-canvas {
+      height: 100vh;
+      width: 100vw;
+      outline: none;
+
+      @media screen and (min-width: map-get($breakpoints, sm)) {
+        width: 60vw;
+      }
+
+      @media screen and (max-width: map-get($breakpoints, md)) and (orientation: landscape) {
+        height: 100%;
+      }
+    }
+  }
+}

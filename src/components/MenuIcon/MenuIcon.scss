@@ -1,0 +1,60 @@
+@import "../../config/variables";
+
+.menu-icon-wrapper {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background: rgba(00, 00, 00, 0.3);
+  padding: 4px;
+  position: fixed;
+  top: $main-padding;
+  left: $main-padding;
+  z-index: 1000;
+  -webkit-tap-highlight-color: transparent;
+
+  @media screen and (min-width: map-get($breakpoints, md)) {
+    display: none;
+  }
+
+  .bar {
+    height: 2px;
+    width: 30px;
+    background: white;
+    transition: all 0.2s ease 0s;
+  }
+
+  .top-bar {
+    transform-origin: left top;
+    margin-bottom: 6px;
+  }
+
+  .middle-bar {
+    opacity: 1;
+  }
+
+  .bottom-bar {
+    transform-origin: left top;
+    margin-top: 6px;
+  }
+
+  &.active {
+    .top-bar {
+      transform: rotate(45deg);
+      margin-bottom: 11px;
+    }
+
+    .middle-bar {
+      opacity: 0;
+      transform: translate(-16px, -2px);
+    }
+
+    .bottom-bar {
+      transform: translateX(-1px) rotate(-45deg);
+      margin-top: 6px;
+    }
+  }
+}

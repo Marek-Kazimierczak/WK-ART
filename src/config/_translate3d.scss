@@ -1,0 +1,30 @@
+.translate3D-wrapper {
+  transform-style: preserve-3d;
+}
+
+.frame {
+  transform-style: preserve-3d;
+  transform: translateZ(-40px) scale(1);
+  -webkit-transform: translateZ(-40px) scale(1);
+}
+
+.nav-heading {
+  transform-style: preserve-3d;
+  transform: translateZ(80px) scale(1);
+  -webkit-transform: translateZ(80px) scale(1);
+  span:nth-child(1) {
+    transform-style: preserve-3d;
+    transform: translateZ(80px) scale(1);
+    -webkit-transform: translateZ(80px) scale(1);
+  }
+  span:nth-child(2) {
+    transform-style: preserve-3d;
+    transform: translateZ(100px) scale(1);
+    -webkit-transform: translateZ(100px) scale(1);
+  }
+  span:nth-child(3) {
+    transform-style: preserve-3d;
+    transform: translateZ(120px) scale(1);
+    -webkit-transform: translateZ(120px) scale(1);
+  }
+}

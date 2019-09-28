@@ -1,0 +1,25 @@
+@import "../../../../config/variables";
+
+.sticky {
+  height: 100vh;
+  width: 100vw;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .animation {
+    padding: $main-padding;
+    flex-basis: 50%;
+    .image {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .heading {
+    position: absolute;
+    right: $main-padding * 3;
+    bottom: $main-padding * 3;
+  }
+}

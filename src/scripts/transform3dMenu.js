@@ -27,8 +27,6 @@ const translate3d = () => {
   });
 };
 
-const translate3DTimeOutset = () => {
-  setTimeout(translate3d, 5000);
+export const translate3D = () => {
+  setTimeout(translate3d, 3000);
 };
-
-export { translate3DTimeOutset };

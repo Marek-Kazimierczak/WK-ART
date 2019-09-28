@@ -1,0 +1,40 @@
+@import "../../config/variables";
+
+.nav-contact {
+  display: none;
+
+  @media screen and (min-width: map-get($breakpoints, md)) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    padding: $main-padding;
+    z-index: 5;
+  }
+  .header-logo {
+    width: 20px;
+    height: 20px;
+
+    img {
+      height: 100%;
+    }
+
+    .header-logo-svg {
+      height: 100%;
+    }
+  }
+
+  .contact-link {
+    margin-right: $main-padding * 2;
+    padding: $mobile-padding;
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+
+    &.contact-link-active {
+      background: #333;
+      transition: all 0.5s ease;
+    }
+  }
+}
