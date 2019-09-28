@@ -1,9 +1,9 @@
 import * as PIXI from "pixi.js";
 import { TimelineMax, Sine } from "gsap";
 
-const logoPixi = () => {
-  const img = "./assets/bubble-1.png";
-  const shape = "./assets/ripple.jpg";
+const logoPixi = (logoImg, filterImg) => {
+  const img = logoImg;
+  const shape = filterImg;
 
   const app = new PIXI.Application({
     view: document.querySelector("#pixi-canvas"),
@@ -34,8 +34,6 @@ const logoPixi = () => {
     { x: 20, y: 20, ease: Sine.easeOut },
     "ripple"
   );
-
-  console.log("logoPixi loaded");
 };
 
 export default logoPixi;

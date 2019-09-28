@@ -1,35 +1,24 @@
-import React, { Component } from "react";
-import { CSSTransition } from "react-transition-group";
-import logoPixi from "../../scripts/logoPixi";
-import { translate3DTimeOutSwitch } from "../../scripts/transform3dMenu";
+import React, { useEffect } from "react";
+
 import Logo from "../Logo";
-import TestSlider from "../TestSlider";
-// import OldSlider from "./OldSlider";
+import TestSlider from "../Gallery";
+import Footer from "../Footer";
 
-class Section extends Component {
-  componentDidMount() {
-    logoPixi();
-    translate3DTimeOutSwitch();
-  }
+const Section = props => {
+  const { data, heading, type, assets } = props;
 
-  render() {
-    const { heading, type } = this.props;
-    return (
-      <>
-        <Logo heading={heading} type={type} />
+  useEffect(() => {
+    document.body.classList.add("body-overflow");
+  }, [data]);
 
-        <CSSTransition
-          in={true}
-          appear={true}
-          timeout={1000}
-          classNames="slide"
-        >
-          <TestSlider type={type} />
-          {/* <OldSlider type={type} /> */}
-        </CSSTransition>
-      </>
-    );
-  }
-}
+  return (
+    <section className="section-wrapper">
+      <Logo heading={heading} type={type} data={data} />
+
+      <TestSlider type={type} assets={assets} />
+      <Footer />
+    </section>
+  );
+};
 
 export default Section;

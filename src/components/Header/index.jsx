@@ -1,31 +1,26 @@
 import React from "react";
+import { Link, withRouter } from "react-router-dom";
 
 import "./Header.scss";
 
 const Header = props => {
+  const { history } = props;
   return (
-    <div className="nav-contact">
+    <header className="nav-contact">
       <div className="header-logo">
-        <img src="./assets/bubble-1.png" alt="wk-art logo" />
+        <img src="./assets/menu/LOGO.png" alt="logo" />
       </div>
-      <div className="contact-links">
-        <p
-          className="contact-link open-js"
-          onClick={() => document.body.classList.add("body-overflow-contact")}
-        >
-          Contact
-        </p>
-
-        <a
-          href="https://www.behance.net/wkazimierc8a74"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span className="fab fa-behance" />
-        </a>
-      </div>
-    </div>
+      <Link
+        to="/about"
+        className={`contact-link ${
+          history.location.pathname === "/about" ? "contact-link-active" : ""
+        }`}
+        onClick={() => document.body.classList.add("body-overflow")}
+      >
+        <p>About me</p>
+      </Link>
+    </header>
   );
 };
 
-export default Header;
+export default withRouter(Header);
