@@ -1,0 +1,27 @@
+@import "../../config/variables";
+
+.footer-wrapper {
+  margin-top: 200px;
+  padding-top: $main-padding;
+}
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 2px solid #333;
+  padding: $mobile-padding;
+  color: #666;
+
+  .footer-logo {
+    height: 20px;
+    margin-right: $mobile-padding;
+
+    img {
+      height: 100%;
+      opacity: 0.4;
+    }
+  }
+  .footer-brand {
+    padding: 0 $mobile-padding/2;
+  }
+}

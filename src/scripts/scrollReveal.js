@@ -33,16 +33,6 @@ const scroll = () => {
     delay: 3000,
     origin: "left"
   });
-
-  sr.reveal(".js-image", {
-    duration: 1000,
-    // delay: 1000,
-    // distance: "400px",
-    // origin: "left",
-    easing: "ease-in"
-  });
-
-  console.log("ScrollReveal loaded", ScrollReveal);
 };
 
 export default scroll;

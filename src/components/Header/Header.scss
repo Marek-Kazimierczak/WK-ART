@@ -1,35 +1,40 @@
 @import "../../config/variables";
 
 .nav-contact {
-  position: absolute;
-  margin: 0 auto;
-  display: flex;
-  justify-content: flex-end;
-  width: 90%;
-  padding: $main-padding;
-  z-index: 5;
-  p {
-    padding-right: $main-padding;
+  display: none;
+
+  @media screen and (min-width: map-get($breakpoints, md)) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    padding: $main-padding;
+    z-index: 5;
   }
-  a {
+  .header-logo {
+    width: 20px;
+    height: 20px;
+
+    img {
+      height: 100%;
+    }
+
+    .header-logo-svg {
+      height: 100%;
+    }
+  }
+
+  .contact-link {
+    margin-right: $main-padding * 2;
+    padding: $mobile-padding;
     text-decoration: none;
     color: #fff;
-    padding-right: $main-padding;
-    @media screen and (min-width: map-get($breakpoints, sm)) {
-      padding-right: 0;
-    }
-  }
-  .contact-link,
-  .fa-behance {
-    text-shadow: none;
-    transition-duration: 0.5s;
-    transition-property: text-shadow;
     cursor: pointer;
-    .contact-link:hover {
-      text-shadow: #fff 0 0 50px;
-    }
-    .fa-behance:hover {
-      text-shadow: #fff 0 0 50px;
+
+    &.contact-link-active {
+      background: #333;
+      transition: all 0.5s ease;
     }
   }
 }

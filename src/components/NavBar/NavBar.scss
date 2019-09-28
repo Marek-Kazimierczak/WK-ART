@@ -1,0 +1,38 @@
+@import "../../config/variables";
+
+.nav-menu {
+  display: none;
+
+  @media screen and (min-width: map-get($breakpoints, md)) {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: $main-padding;
+    margin: 0 auto;
+    z-index: 100;
+    right: $main-padding * 2;
+    width: auto;
+  }
+
+  .navlink {
+    color: white;
+    text-transform: capitalize;
+    padding: 1em;
+    text-decoration: none;
+    text-shadow: none;
+    transition-duration: 0.5s;
+    transition-property: text-shadow;
+    &:hover {
+      text-shadow: #fff 0 0 50px;
+    }
+
+    &.active {
+      background: #333;
+      transition: all 0.5s ease;
+
+      p {
+        text-shadow: #fff 0 0 100px;
+      }
+    }
+  }
+}
