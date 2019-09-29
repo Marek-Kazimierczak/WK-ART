@@ -3,14 +3,19 @@
 .footer-wrapper {
   margin-top: 200px;
   padding-top: $main-padding;
+  z-index: 100;
 }
 .footer-content {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   border-top: 2px solid #333;
   padding: $mobile-padding;
   color: #666;
+
+  @media screen and (min-width: map-get($breakpoints, sm)) {
+    justify-content: center;
+  }
 
   .footer-logo {
     height: 20px;

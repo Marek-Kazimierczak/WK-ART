@@ -23,7 +23,7 @@
     padding-top: $main-padding * 2;
 
     .menu-logo {
-      height: 80px;
+      height: 40px;
       text-align: center;
       padding-bottom: $main-padding;
       -webkit-tap-highlight-color: transparent;
@@ -35,7 +35,7 @@
     .menu-mobile-item {
       opacity: 0;
       padding: $main-padding/4;
-      border-top: 1px solid white;
+      border-top: 1px solid rgba(255, 255, 255, 0.4);
       -webkit-tap-highlight-color: transparent;
 
       .navlink-mobile {

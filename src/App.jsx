@@ -20,6 +20,7 @@ const App = () => {
 
   useEffect(() => {
     particles();
+    document.querySelector(".preloader").remove();
   }, []);
 
   const handleMenuOpen = () => {

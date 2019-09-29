@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 import Logo from "../Logo";
-import TestSlider from "../Gallery";
+import Gallery from "../Gallery";
 import Footer from "../Footer";
 
 const Section = props => {
@@ -14,8 +14,7 @@ const Section = props => {
   return (
     <section className="section-wrapper">
       <Logo heading={heading} type={type} data={data} />
-
-      <TestSlider type={type} assets={assets} />
+      <Gallery type={type} assets={assets} />
       <Footer />
     </section>
   );
