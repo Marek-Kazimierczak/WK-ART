@@ -7,9 +7,9 @@ const Header = props => {
   const { history } = props;
   return (
     <header className="nav-contact">
-      <div className="header-logo">
+      <Link to="/" className="header-logo">
         <img src="./assets/menu/LOGO.png" alt="logo" />
-      </div>
+      </Link>
       <Link
         to="/about"
         className={`contact-link ${

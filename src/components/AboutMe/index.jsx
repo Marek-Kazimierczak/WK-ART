@@ -28,7 +28,7 @@ const AboutMe = () => {
         </p>
         <p className="about-description">
           I used to focus my interest on traditional techniques mostly, turned
-          to digital media in recent months though. I
+          to digital media in recent months though.
         </p>
         <p className="about-description">
           Now I'm keen on 3D design and develop myself in this field.
