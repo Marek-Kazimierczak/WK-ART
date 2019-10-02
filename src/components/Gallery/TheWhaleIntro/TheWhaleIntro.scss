@@ -1,0 +1,28 @@
+@import "../../../config/variables";
+
+.whale-intro-wrapper {
+  display: none;
+  position: absolute;
+  top: 200px;
+  left: 200px;
+  max-width: 50vw;
+  height: 80vh;
+  font-size: 1.5rem;
+  line-height: 3rem;
+
+  @media screen and (min-width: map-get($breakpoints, md)) {
+    display: block;
+  }
+
+  .whale-arrow {
+    margin-right: $main-padding;
+    padding-top: 100px;
+    font-size: 3rem;
+  }
+
+  .scroll-down-txt {
+    position: relative;
+    top: -20px;
+    font-size: 1rem;
+  }
+}
