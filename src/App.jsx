@@ -12,15 +12,19 @@ import MenuContent from "./components/MenuContent";
 import AboutMe from "./components/AboutMe";
 import NavBar from "./components/NavBar";
 import Section from "./components/Section";
+import InstructionOverlay from "./components/InstructionOverlay";
 
 import "./App.scss";
 
 const App = () => {
   const [openMenu, setOpenMenu] = useState(false);
+  const [instruction, setInstruction] = useState(true);
 
   useEffect(() => {
     particles();
-    document.querySelector(".preloader").remove();
+    setTimeout(() => {
+      document.querySelector(".preloader").remove();
+    }, 5000);
   }, []);
 
   const handleMenuOpen = () => {
@@ -51,29 +55,39 @@ const App = () => {
     <Router>
       <h1 className="hidden-heading">Wojtek Kazimierczak WK-ART</h1>
       <canvas className="background-particles" />
-      <GoTopButton />
-      <Header />
-      <MenuIcon isOpenMenu={openMenu} setOpenMenu={handleMenuOpen} />
-      <MenuContent isOpenMenu={openMenu} setOpenMenu={handleMenuOpen} />
-      <NavBar />
-      <Route
-        render={({ location }) => (
-          <TransitionGroup>
-            <CSSTransition key={location.key} classNames="fade" timeout={1000}>
-              <Switch>
-                <ScrollToTop>
-                  {routes}
-                  <Route
-                    path="/about"
-                    render={routeProps => <AboutMe {...routeProps} />}
-                  />
-                </ScrollToTop>
-                }
-              </Switch>
-            </CSSTransition>
-          </TransitionGroup>
-        )}
-      />
+      {instruction ? (
+        <InstructionOverlay setInstruction={setInstruction} />
+      ) : (
+        <>
+          <GoTopButton />
+          <Header />
+          <MenuIcon isOpenMenu={openMenu} setOpenMenu={handleMenuOpen} />
+          <MenuContent isOpenMenu={openMenu} setOpenMenu={handleMenuOpen} />
+          <NavBar />
+          <Route
+            render={({ location }) => (
+              <TransitionGroup>
+                <CSSTransition
+                  key={location.key}
+                  classNames="fade"
+                  timeout={1000}
+                >
+                  <Switch>
+                    <ScrollToTop>
+                      {routes}
+                      <Route
+                        path="/about"
+                        render={routeProps => <AboutMe {...routeProps} />}
+                      />
+                    </ScrollToTop>
+                    }
+                  </Switch>
+                </CSSTransition>
+              </TransitionGroup>
+            )}
+          />
+        </>
+      )}
     </Router>
   );
 };

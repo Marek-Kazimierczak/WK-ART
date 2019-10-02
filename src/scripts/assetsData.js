@@ -11,93 +11,123 @@ const data = {
         index: 2,
         picture: "./assets/p-3.jpg",
         display: "sticky",
-        secondImageID: 9
+        secondImageID: 9,
+        width: 95,
+        height: 130
       },
       {
         id: 9,
         index: 8,
         picture: "./assets/p-9.jpg",
-        display: "ignore"
+        display: "ignore",
+        width: 130,
+        height: 120
       },
       {
         id: 10,
         index: 9,
         picture: "./assets/p-10.jpg",
-        display: "bottom"
+        display: "bottom",
+        width: 230,
+        height: 130
       },
       {
         id: 7,
         index: 6,
         picture: "./assets/p-7.jpg",
-        display: "fade"
+        display: "fade",
+        width: 130,
+        height: 85
       },
       {
         id: 6,
         index: 5,
         picture: "./assets/p-6.jpg",
-        display: "fade"
+        display: "fade",
+        width: 200,
+        height: 130
       },
       {
         id: 13,
         index: 12,
         picture: "./assets/p-13.jpg",
-        display: "bottom"
+        display: "bottom",
+        width: 230,
+        height: 130
       },
       {
         id: 5,
         index: 4,
         picture: "./assets/p-5.jpg",
-        display: "fade"
+        display: "fade",
+        width: 200,
+        height: 130
       },
       {
         id: 14,
         index: 13,
         picture: "./assets/p-14.jpg",
         display: "sticky",
-        secondImageID: 15
+        secondImageID: 15,
+        width: 80,
+        height: 130
       },
       {
         id: 15,
         index: 14,
         picture: "./assets/p-15.jpg",
-        display: "ignore"
+        display: "ignore",
+        width: 90,
+        height: 130
       },
       {
         id: 2,
         index: 1,
         picture: "./assets/p-2.jpg",
-        display: "fade"
+        display: "fade",
+        width: 200,
+        height: 130
       },
       {
         id: 11,
         index: 10,
         picture: "./assets/p-11.jpg",
         display: "sticky",
-        secondImageID: 1
+        secondImageID: 1,
+        width: 140,
+        height: 150
       },
       {
         id: 1,
         index: 0,
         picture: "./assets/p-1.jpg",
-        display: "ignore"
+        display: "ignore",
+        width: 90,
+        height: 130
       },
       {
         id: 4,
         index: 3,
         picture: "./assets/p-4.jpg",
-        display: "fade"
+        display: "fade",
+        width: 200,
+        height: 130
       },
       {
         id: 8,
         index: 7,
         picture: "./assets/p-8.jpg",
-        display: "fade"
+        display: "fade",
+        width: 150,
+        height: 130
       },
       {
         id: 12,
         index: 11,
         picture: "./assets/p-12.jpg",
-        display: "fade"
+        display: "fade",
+        width: 230,
+        height: 130
       }
     ]
   },
@@ -112,43 +142,57 @@ const data = {
         id: 27,
         index: 7,
         picture: "./assets/d-7.jpg",
-        display: "fade"
+        display: "fade",
+        width: 230,
+        height: 150
       },
       {
         id: 21,
         index: 0,
         picture: "./assets/d-1.jpg",
-        display: "fade"
+        display: "fade",
+        width: 200,
+        height: 150
       },
       {
         id: 22,
         index: 1,
         picture: "./assets/d-2.jpg",
-        display: "right"
+        display: "right",
+        width: 150,
+        height: 150
       },
       {
         id: 26,
         index: 6,
         picture: "./assets/d-6.jpg",
-        display: "fade"
+        display: "fade",
+        width: 210,
+        height: 150
       },
       {
         id: 23,
         index: 3,
         picture: "./assets/d-3.jpg",
-        display: "bottom"
+        display: "bottom",
+        width: 180,
+        height: 150
       },
       {
         id: 24,
         index: 4,
         picture: "./assets/d-4.jpg",
-        display: "left"
+        display: "left",
+        width: 250,
+        height: 150
       },
       {
         id: 25,
         index: 5,
         picture: "./assets/d-5.jpg",
-        display: "bottom"
+        display: "bottom",
+        width: 200,
+        height: 150
       }
     ]
   },

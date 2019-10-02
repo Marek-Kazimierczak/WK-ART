@@ -9,9 +9,21 @@ const Logo = props => {
   const { type, heading, data } = props;
 
   useEffect(() => {
+    const preloaderHTML = document.querySelector(".preloader");
     logoPixi(data.logo, data.filter);
-    translate3D();
-    scrollReveal();
+
+    setTimeout(
+      () => {
+        translate3D();
+        scrollReveal();
+      },
+      preloaderHTML !== null ? 4500 : 0
+    );
+
+    console.log(
+      "document.querySelector('.preloader')",
+      document.querySelector(".preloader")
+    );
   }, [data.logo, data.filter]);
 
   const scrollToGallery = () => {

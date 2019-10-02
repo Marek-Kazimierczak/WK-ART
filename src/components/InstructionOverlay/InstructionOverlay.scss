@@ -1,0 +1,119 @@
+@import "../../config/variables";
+.instruction-wrapper {
+  width: 100vw;
+  height: 100vh;
+
+  .instruction-overlay {
+    top: 0;
+    left: 0;
+    z-index: 3000;
+    background-color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-mask-image: radial-gradient(
+      circle at 50% 50%,
+      black 30%,
+      rgba(0, 0, 0, 0.1) 50%
+    );
+    mask-image: radial-gradient(
+      circle at 50% 50%,
+      black 50%,
+      rgba(0, 0, 0, 0.6) 50%
+    );
+
+    @media screen and (min-width: map-get($breakpoints, md)) {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+  }
+
+  .instruction-content {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    z-index: 4000;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (max-width: map-get($breakpoints, md)) and (orientation: landscape) {
+      bottom: $main-padding;
+    }
+
+    @media screen and (min-width: map-get($breakpoints, md)) {
+      bottom: 50%;
+      transform: translateY(50%);
+    }
+
+    .frame {
+      height: 100px;
+      width: 250px;
+      border: 10px solid #333;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      margin-bottom: $main-padding * 3;
+
+      @media screen and (min-width: map-get($breakpoints, sm)) {
+        width: 300px;
+        margin-bottom: $main-padding;
+      }
+      @media screen and (min-width: map-get($breakpoints, md)) {
+        width: 600px;
+        height: 200px;
+        border: 10px solid #222;
+      }
+
+      .instruction-btn {
+        padding: $main-padding/2 $main-padding;
+        display: block;
+        border: none;
+        outline: none;
+        background-color: black;
+        color: #fff;
+        font-size: 1.5rem;
+        z-index: 4500;
+        cursor: pointer;
+        animation: shaker 2s linear infinite;
+
+        &.active,
+        &:hover {
+          background: #333;
+          transition: all 0.3s linear;
+        }
+      }
+    }
+
+    .arrow {
+      padding-bottom: $main-padding;
+    }
+
+    .instruction-text {
+      text-align: center;
+      padding: 0 $mobile-padding;
+
+      @media screen and (min-width: map-get($breakpoints, md)) {
+        text-shadow: 0 0 10px black, 3px 2px 6px rgba(0, 0, 0, 0);
+      }
+    }
+  }
+
+  .fade-out {
+    opacity: 0;
+    transition: all 0.5s linear;
+  }
+}
+@keyframes shaker {
+  0% {
+    -webkit-transform: translate(2px, 0);
+  }
+  50% {
+    -webkit-transform: translate(-2px, 0);
+  }
+  100% {
+    -webkit-transform: translate(2px, 0);
+  }
+}

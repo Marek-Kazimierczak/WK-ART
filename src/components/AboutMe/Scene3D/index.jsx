@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as BABYLON from "babylonjs";
 import "babylonjs-loaders";
-import Scene from "./Scene"; // import the component above linking to file we just created.
+import Scene from "./Scene"; // import the component above linking to file just created.
 
 // giltch effect
 var rgbGlitchFX = `varying vec2 vUV;
@@ -90,7 +90,7 @@ const Scene3D = () => {
     camera.pinchInwards = true;
     camera.hasSwiped = false;
 
-    //Adding a light for glitch shader
+    //Adding a light to glitch shader
     var lightOmni = new BABYLON.PointLight(
       "Omni",
       new BABYLON.Vector3(20, 100, 100),
@@ -105,7 +105,7 @@ const Scene3D = () => {
     );
 
     light.position = new BABYLON.Vector3(2, 10, 25);
-    light.intensity = 12;
+    light.intensity = 18;
 
     var lightSphere3 = BABYLON.Mesh.CreateSphere("sphere3", 10, 2, scene);
     lightSphere3.position = light.position;
@@ -113,7 +113,7 @@ const Scene3D = () => {
     lightSphere3.material.emissiveColor = new BABYLON.Color3(1, 1, 0);
 
     // Default intensity is 1. Let's dim the light a small amount
-    light.intensity = 0.8;
+    light.intensity = 4;
 
     // Initiate assets manager and import object + material setup
     var assetsManager = new BABYLON.AssetsManager(scene);
@@ -194,7 +194,7 @@ const Scene3D = () => {
         "screenSize",
         new BABYLON.Vector2(postEffect.width, postEffect.height)
       );
-      effect.setFloat("time", time); //this is the problematic line
+      effect.setFloat("time", time);
       effect.setTexture("noiseRef0", noiseTexture0);
       effect.setTexture("noiseRef1", noiseTexture1);
     };
@@ -207,7 +207,7 @@ const Scene3D = () => {
       scene
     );
 
-    light1.intensity = 2;
+    light1.intensity = 4;
 
     const lightSphere = BABYLON.Mesh.CreateSphere("sphere", 10, 2, scene);
     lightSphere.position = light.position;

@@ -6,13 +6,13 @@ import ImageBottom from "./ImageDesktop/ImageBottom";
 import ImageSide from "./ImageDesktop/ImageSide";
 import ImageSticky from "./ImageDesktop/ImageSticky";
 import ImageVertical from "./ImageDesktop/ImageVertical";
+import TheWhaleIntro from "./TheWhaleIntro";
 
 import "./Gallery.scss";
 
 const Gallery = props => {
   const { type, assets } = props;
-
-  const isMobile = window.screen.width <= 400;
+  const isMobile = window.screen.width <= 600;
 
   const galleryDesktop = assets.map((picture, index) => {
     const { id, display, option, secondImageID } = picture;
@@ -68,6 +68,7 @@ const Gallery = props => {
       className={`gallery gallery-wrapper ${type === "the whale" &&
         "gallery-without-padding"}`}
     >
+      {type === "the whale" && <TheWhaleIntro />}
       {isMobile ? galleryMobile : galleryDesktop}
     </main>
   );

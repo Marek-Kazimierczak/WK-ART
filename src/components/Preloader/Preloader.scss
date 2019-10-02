@@ -1,0 +1,98 @@
+@import "../../config/variables";
+
+$t: 2s;
+$size: 4vh;
+$gapeSize: 8vh;
+
+.preloader {
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .loading-letters-wrapper {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-100%);
+
+    @media screen and (max-width: map-get($breakpoints, md)) and (orientation: landscape) {
+      transform: translateY(-50%);
+    }
+
+    .loading-letter {
+      margin: 12px;
+      animation: fadeIn $t linear infinite alternate;
+    }
+
+    @for $i from 1 through 10 {
+      & .loading-letter:nth-child(#{$i}) {
+        animation-delay: 0.2s * $i;
+      }
+    }
+  }
+
+  .scenes-wrapper {
+    display: flex;
+  }
+
+  .scene {
+    perspective: 11vh;
+
+    @for $i from 1 through 10 {
+      &:nth-child(#{$i}) .circle {
+        animation-delay: 0.2s + $i * 0.15;
+      }
+    }
+  }
+
+  .circle {
+    display: grid;
+    grid-gap: $gapeSize;
+    transform-style: preserve-3d;
+    animation: rotareSpiral $t * 1.5 linear infinite;
+    color: white;
+    font-weight: bold;
+    opacity: 0.4;
+
+    &:before,
+    &:after {
+      width: $size;
+      height: $size;
+      margin: $size/2;
+      box-sizing: border-box;
+      animation: inherit;
+      animation-direction: reverse;
+    }
+
+    &:before {
+      content: "/";
+    }
+
+    &:after {
+      content: "\005C";
+    }
+  }
+}
+
+@keyframes rotareSpiral {
+  0% {
+    transform: rotateX(1turn);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 1;
+  }
+}

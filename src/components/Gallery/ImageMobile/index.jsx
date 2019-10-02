@@ -2,6 +2,8 @@ import React from "react";
 import { Controller, Scene } from "react-scrollmagic";
 import { Tween } from "react-gsap";
 
+import "./ImageMobile.scss";
+
 const ImageMobile = props => {
   const { picture, index } = props;
 
