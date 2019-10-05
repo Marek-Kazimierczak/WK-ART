@@ -22,9 +22,9 @@ const App = () => {
 
   useEffect(() => {
     particles();
-    setTimeout(() => {
-      document.querySelector(".preloader").remove();
-    }, 5000);
+    // setTimeout(() => {
+    document.querySelector(".preloader").remove();
+    // }, 5000);
   }, []);
 
   const handleMenuOpen = () => {

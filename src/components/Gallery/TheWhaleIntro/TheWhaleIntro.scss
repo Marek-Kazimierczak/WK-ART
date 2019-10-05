@@ -1,28 +1,53 @@
 @import "../../../config/variables";
 
 .whale-intro-wrapper {
-  display: none;
   position: absolute;
-  top: 200px;
-  left: 200px;
+  top: 50px;
+  left: 100px;
   max-width: 50vw;
   height: 80vh;
-  font-size: 1.5rem;
-  line-height: 3rem;
+  font-size: 1rem;
+  line-height: 1.8rem;
 
   @media screen and (min-width: map-get($breakpoints, md)) {
+    top: 200px;
+    left: 200px;
+    font-size: 1.5rem;
+    line-height: 3rem;
+  }
+
+  .intro-text-mobile {
     display: block;
+    @media screen and (min-width: map-get($breakpoints, md)) {
+      display: none;
+    }
+  }
+
+  .intro-text-desktop {
+    display: none;
+    @media screen and (min-width: map-get($breakpoints, md)) {
+      display: block;
+    }
   }
 
   .whale-arrow {
     margin-right: $main-padding;
-    padding-top: 100px;
-    font-size: 3rem;
+    padding-top: $main-padding * 2;
+    font-size: 1.5rem;
+
+    @media screen and (min-width: map-get($breakpoints, md)) {
+      padding-top: 200px;
+      font-size: 3rem;
+    }
   }
 
   .scroll-down-txt {
     position: relative;
-    top: -20px;
+    top: -$main-padding/2;
     font-size: 1rem;
+
+    @media screen and (min-width: map-get($breakpoints, md)) {
+      font-size: 2rem;
+    }
   }
 }

@@ -23,25 +23,22 @@ const AboutMe = () => {
           <div className="about-divider" />
         </Tween>
         <p className="about-description">
-          I am visual artist, I graduated at the Academy of Fine Arts in
-          Katowice.
+          I am visual artist, graduated of the Academy of Fine Arts in Katowice.
         </p>
         <p className="about-description">
           I used to focus my interest on traditional techniques mostly, turned
-          to digital media in recent months though.
+          to digital media recently though.
         </p>
         <p className="about-description">
-          Now I'm keen on 3D design and develop myself in this field.
+          Now I'm keen on 3D graphics and develop myself in this field.
         </p>
         <p className="about-description">
-          I'm a person with huge interest in world, so I'm fond of travelling
-          and exploring. Above all I love outdoor activities so I run, swim and
-          skateboard quite a bit.
+          I'm a person with huge interest in the world, so I'm fond of
+          travelling and exploring. Above all I love outdoor activities so I
+          run, swim and skateboard quite a bit.
         </p>
         <h3 className="about-contact-header">E-mail:</h3>
-        <p className="about-special-txt">w.kazimierczak@gmail.com</p>
-        <h3 className="about-contact-header">Phone:</h3>
-        <p className="about-special-txt">795 869 724</p>
+        <p className="about-special-txt">w.kazimierczak.art@gmail.com</p>
       </div>
       <div className="about-scene-wrapper">
         <Scene3D />
