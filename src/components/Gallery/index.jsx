@@ -68,7 +68,7 @@ const Gallery = props => {
       className={`gallery gallery-wrapper ${type === "the whale" &&
         "gallery-without-padding"}`}
     >
-      {type === "the whale" && <TheWhaleIntro />}
+      {type === "the whale" && !isMobile && <TheWhaleIntro />}
       {isMobile ? galleryMobile : galleryDesktop}
     </main>
   );

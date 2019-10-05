@@ -262,7 +262,7 @@ const Scene3D = () => {
         try {
           scene.render();
         } catch (error) {
-          console.log("RENDER FAILED!!!");
+          console.log("RENDER FAILED!");
         }
       }
     });

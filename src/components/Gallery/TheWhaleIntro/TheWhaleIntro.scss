@@ -1,7 +1,6 @@
 @import "../../../config/variables";
 
 .whale-intro-wrapper {
-  display: none;
   position: absolute;
   top: 200px;
   left: 200px;
@@ -9,10 +8,6 @@
   height: 80vh;
   font-size: 1.5rem;
   line-height: 3rem;
-
-  @media screen and (min-width: map-get($breakpoints, md)) {
-    display: block;
-  }
 
   .whale-arrow {
     margin-right: $main-padding;
