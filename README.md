@@ -1,14 +1,14 @@
 Welcome, 
 
 This is my brother's website. It is divided to 4 gallery section and About me page. 
-In the beggining you are invited by preloader desiged in pure CSS. 
-Later on the quick instruction of how to navigate to the gallery of images is pop out. 
-After the Got it! button is pressed the fancy header with logo is reveald and when you press on it you are moved to gallery animated with ScrollMagic and GSAP. 
-There is quite heavy 3D model of my brother in About me page, but it looks really nice :) so please be a bit patient while it is loading. It is worth it. 
+In the beginning you are invited by preloader desiged in pure CSS. 
+Later on the quick instruction how to navigate. 
+After the Got it! button is pressed the fancy header with logo is revealed. When you press it, gallery animated by ScrollMagic and GSAP is being shown. 
+There is quite heavy 3D model of my brother in About me page, it looks really nice whatsoever:) Please be a bit patient while it is loading. 
 
-Viewing this website on different devices gives you different user experience, because it use RWD methods.
+The application is dedicated to a desktop. It's responsive, so don't hesitate to check it out on your mobile.
 
-Please enjoy the content :)
+Enjoy :)
 
 
 
