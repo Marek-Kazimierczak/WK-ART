@@ -125,13 +125,12 @@ const Scene3D = () => {
     );
 
     meshTask.onSuccess = function(task) {
-      var mesh = task.loadedMeshes[1];
+      var mesh = task.loadedMeshes[0];
 
       mesh.setPivotMatrix(BABYLON.Matrix.Translation(0, 0, 0));
 
-      mesh.position.y = -9;
-      mesh.position.z = 15;
-      mesh.position.x = -1;
+      // Object position on the scene
+      mesh.position.z = 17;
 
       camera.beta = BABYLON.Tools.ToRadians(90);
 
@@ -139,21 +138,19 @@ const Scene3D = () => {
 
       materialPBR.metallic = 0;
       materialPBR.roughness = 0.8;
+      materialPBR.alpha = 0.5;
+
       materialPBR.albedoTexture = new BABYLON.Texture(
-        "/assets/scene/lambert2_Base_Color.png",
+        "/assets/scene/w_baseColor.jpg",
         scene
       );
 
       materialPBR.metallicTexture = new BABYLON.Texture(
-        "/assets/scene/lambert2_occlusionRoughnessMetallic.png",
+        "/assets/scene/w_roughness.jpg",
         scene
       );
       materialPBR.ambientTexture = new BABYLON.Texture(
-        "/assets/scene/lambert2_Mixed_AO.png",
-        scene
-      );
-      materialPBR.bumpTexture = new BABYLON.Texture(
-        "/assets/scene/w_nm.jpg",
+        "/assets/scene/w_AO.jpg",
         scene
       );
 
@@ -224,7 +221,7 @@ const Scene3D = () => {
       scene
     );
 
-    light2.intensity = 2;
+    light2.intensity = 5;
 
     const lightSphere2 = BABYLON.Mesh.CreateSphere("sphere", 10, 2, scene);
     lightSphere2.position = light2.position;
@@ -233,7 +230,7 @@ const Scene3D = () => {
 
     // SHADOW =================================================================
     if (typeof meshTask.loadedMeshes !== "undefined") {
-      const object = meshTask.loadedMeshes[1];
+      const object = meshTask.loadedMeshes[0];
 
       const shadowGenerator = new BABYLON.ShadowGenerator(1024, light);
       shadowGenerator.addShadowCaster(object);
@@ -254,7 +251,7 @@ const Scene3D = () => {
         time += scene.getAnimationRatio() * rate;
 
         if (typeof meshTask.loadedMeshes !== "undefined") {
-          const object = meshTask.loadedMeshes[1];
+          const object = meshTask.loadedMeshes[0];
           object.rotation.y -= rate / 4;
           object.rotation.y < -0.5 && (rate = -0.01);
           object.rotation.y > 0.5 && (rate = 0.01);
