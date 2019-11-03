@@ -59,7 +59,7 @@
 
   .about-scene-wrapper {
     width: 100vw;
-    opacity: 0.5;
+    // opacity: 0.5;
 
     @media screen and (min-width: map-get($breakpoints, md)) {
       width: 60%;
