@@ -22,9 +22,9 @@ const App = () => {
 
   useEffect(() => {
     particles();
-    // setTimeout(() => {
-    document.querySelector(".preloader").remove();
-    // }, 5000);
+    setTimeout(() => {
+      document.querySelector(".preloader").remove();
+    }, 5000);
   }, []);
 
   const handleMenuOpen = () => {
@@ -55,7 +55,7 @@ const App = () => {
     <Router>
       <h1 className="hidden-heading">Wojtek Kazimierczak WK-ART</h1>
       <canvas className="background-particles" />
-      {!instruction ? (
+      {instruction ? (
         <InstructionOverlay setInstruction={setInstruction} />
       ) : (
         <>
