@@ -10,6 +10,8 @@ The application is dedicated to a desktop. It's responsive, so don't hesitate to
 
 Enjoy :)
 
+![Screenshot-1](https://user-images.githubusercontent.com/46679378/68583271-0d5f6480-047d-11ea-92f9-6f307f87fb9f.jpg)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
