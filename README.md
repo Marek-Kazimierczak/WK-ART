@@ -10,7 +10,7 @@ The application is dedicated to a desktop. It's responsive, so don't hesitate to
 
 Enjoy :)
 
-
+![Screenshot](Annotation 2019-11-11 115613.jpg)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
