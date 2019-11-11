@@ -12,6 +12,15 @@ Enjoy :)
 
 ![Screenshot-1](https://user-images.githubusercontent.com/46679378/68583271-0d5f6480-047d-11ea-92f9-6f307f87fb9f.jpg)
 
+![Screenshot -  the whale intro](https://user-images.githubusercontent.com/46679378/68583451-72b35580-047d-11ea-993e-1e70bcc386f2.jpg)
+
+![Screenshot - Installation header](https://user-images.githubusercontent.com/46679378/68583507-9eced680-047d-11ea-86dd-25cbe89ad7ba.jpg)
+
+
+![Screenshot - aboutme](https://user-images.githubusercontent.com/46679378/68583565-c4f47680-047d-11ea-91f4-f77cac432fc4.jpg)
+
+![Screenshot - gallery sample](https://user-images.githubusercontent.com/46679378/68583600-da69a080-047d-11ea-9d21-e62dfafc47a9.jpg)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
